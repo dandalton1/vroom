@@ -14,7 +14,7 @@ public class VroomParser {
         boolean shouldParse = true;
 
         while (VroomFile.hasNext() && shouldParse) {
-            String s = VroomFile.next();
+            String s = VroomFile.next().toUpperCase();
             switch (s) {
                 case "BUM": {
                     stackMachine.stack.pop();
