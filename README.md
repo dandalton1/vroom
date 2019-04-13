@@ -14,15 +14,15 @@ Clearly, vroom is the best language.
 
 Vroom takes keywords. These keywords work with a stack.
 
-`BUM` - Pop top of stack
-`BRUM` - Increment top of stack by 1
-`CLUNK` - Decrement top of stack by 1
-`VROOM` - Pop stack and output value as a Unicode character
-`NYEUM` - Pop stack and output value as a decimal
-`CLIK` - Push a 0 onto the stack
-`BEEP` - Add top two values of stack, then push result on top of stack.
-`ZOOM` - User inputs a decimal value. This value is read and pushed to the top of the stack.
-`SKRT` - Halt execution
+- `BUM` - Pop top of stack
+- `BRUM` - Increment top of stack by 1
+- `CLUNK` - Decrement top of stack by 1
+- `VROOM` - Pop stack and output value as a Unicode character
+- `NYEUM` - Pop stack and output value as a decimal
+- `CLIK` - Push a 0 onto the stack
+- `BEEP` - Add top two values of stack, then push result on top of stack.
+- `ZOOM` - User inputs a decimal value. This value is read and pushed to the top of the stack.
+- `SKRT` - Halt execution
 
 # Examples
 
