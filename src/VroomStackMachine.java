@@ -42,6 +42,7 @@ public class VroomStackMachine {
 }
 
 class VroomStackEmptyException extends Exception {
+    static final long serialVersionUID = 69696969;
     public VroomStackEmptyException() {
         super();
     }
