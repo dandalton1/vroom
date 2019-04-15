@@ -10,7 +10,7 @@ public class VroomParser {
         VroomFile = new Scanner(new File(inFile));
     }
 
-    public void parse() {
+    public void parse() throws VroomStackEmptyException {
         boolean shouldParse = true;
 
         while (VroomFile.hasNext() && shouldParse) {

@@ -5,22 +5,22 @@ public class vroom {
     public static boolean showStack = false;
     public static boolean showTime = false;
     public static long startTime = 0;
-    public static long endTime   = 0;
+    public static long endTime = 0;
 
     public static void main(String[] args) {
         String inFile = "";
 
         for (String arg : args) {
             switch (arg) {
-                case "-show-stack": {
-                    showStack = true;
-                }
-                case "-show-time": {
-                    showTime = true;
-                }
-                default: {
-                    inFile = arg;
-                }
+            case "-show-stack": {
+                showStack = true;
+            }
+            case "-show-time": {
+                showTime = true;
+            }
+            default: {
+                inFile = arg;
+            }
             }
         }
 
@@ -47,6 +47,8 @@ public class vroom {
             }
         } catch (FileNotFoundException f) {
             System.out.println("CANNOT CONTINUE - VROOM FILE " + inFile + " INVALID");
+        } catch (VroomStackEmptyException v) {
+            System.out.println("CANNOT CONTINUE - ATTEMPTED TO POP FROM EMPTY STACK");
         }
     }
 }

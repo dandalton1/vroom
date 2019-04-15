@@ -13,7 +13,10 @@ public class VroomStackMachine {
         stackPosition++;
     }
 
-    public Character pop() {
+    public Character pop() throws VroomStackEmptyException {
+        if (stack.isEmpty()) {
+            throw new VroomStackEmptyException();
+        }
         return stack.remove(--stackPosition);
     }
 
@@ -28,5 +31,11 @@ public class VroomStackMachine {
             System.out.printf("EMPTY STACK");
         }
         System.out.println();
+    }
+}
+
+class VroomStackEmptyException extends Exception {
+    public VroomStackEmptyException() {
+        super();
     }
 }
