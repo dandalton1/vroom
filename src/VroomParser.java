@@ -23,15 +23,11 @@ public class VroomParser {
                 break;
             }
             case "BRUM": {
-                char c = stackMachine.pop().charValue();
-                c++;
-                stackMachine.push(c);
+                stackMachine.push((char) (stackMachine.pop().charValue() + 1));
                 break;
             }
             case "CLUNK": {
-                char c = stackMachine.pop().charValue();
-                c--;
-                stackMachine.push(c);
+                stackMachine.push((char) (stackMachine.pop().charValue() - 1));
                 break;
             }
             case "VROOM": {
