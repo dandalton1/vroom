@@ -14,9 +14,10 @@ Clearly, vroom is the best language.
 
 This is where we record progress of a longer-running vroom program, "Hello, world!"
 
-| Commit ID | Execution Time (ms) |
-| --------- | ------------------- |
-| `4347f21` | 80                  |
+| Commit ID | Execution Time (ms) | Notes                                         |
+| --------- | ------------------- | --------------------------------------------- |
+| `e8560d2` | 60                  | Moved to using `ArrayList` instead of `Stack` |
+| `4347f21` | 80                  | Initial Trial                                 |
 
 # Syntax of vroom
 
