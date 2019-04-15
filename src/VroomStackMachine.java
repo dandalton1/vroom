@@ -13,6 +13,13 @@ public class VroomStackMachine {
         stackPosition++;
     }
 
+    public Character peek() throws VroomStackEmptyException {
+        if (stack.isEmpty()) {
+            throw new VroomStackEmptyException();
+        }
+        return stack.get(stackPosition - 1);
+    }
+
     public Character pop() throws VroomStackEmptyException {
         if (stack.isEmpty()) {
             throw new VroomStackEmptyException();

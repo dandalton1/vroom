@@ -30,6 +30,7 @@ Vroom takes keywords. These keywords work with a stack.
 - `NYEUM` - Pop stack and output value as a decimal
 - `CLIK` - Push a 0 onto the stack
 - `BEEP` - Add top two values of stack, then push result on top of stack.
+- `HONK` - Only execute if top of stack is non-zero; otherwise program execution skips to next `HONK`.
 - `ZOOM` - User inputs a decimal value. This value is read and pushed to the top of the stack.
 - `SKRT` - Halt execution
 
@@ -40,8 +41,10 @@ Adding two numbers input by a user and reading it out in vroom:
 ```
     BUM ZOOM ZOOM BEEP NYEUM SKRT
 ```
+This example works by popping the initial `0`, then reading in two numbers with `ZOOM`,
+then using `BEEP` to add them, `NYEUM` to output as decimal, and then `SKRT` to stop.
 
-Outputting "Hello, world!"
+Outputting "Hello, world!":
 
 ```
     BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM VROOM
@@ -59,6 +62,34 @@ Outputting "Hello, world!"
     CLIK BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM BRUM VROOM
     SKRT
 ```
+This works by repetitively incrementing the top of stack with `BRUM` to be the right
+Unicode character, then using `VROOM` to output it, then `CLIK` pushes a new 0 to the
+top of the stack, and the process begins again.
+
+Checking conditional statements:
+```
+    BRUM
+    HONK
+        CLUNK CLUNK NYEUM
+    HONK
+    CLIK
+    HONK
+        NYEUM
+    HONK
+    NYEUM
+    SKRT
+```
+This should output `01`.
+
+The initial `BRUM` adds 1 to the top of the stack. If `HONK` is implemented correctly,
+execution will skip to until the next `HONK`, printing nothing. If `HONK` is not
+implemented correctly, execution will continue, and the two `CLUNK` statements 
+will decrement the stack, which outputs `65535` before the first `0`.
+
+The `CLIK` pushes a `0` to the top of the stack. If `HONK` is implemented correctly,
+`NYEUM` will execute, popping/printing the `0`. The ending `HONK` is skipped due to
+the first `HONK`. The next `NYEUM` will pop/print a `1` (the `1` from earlier), and the
+`SKRT` ends the program.
 
 # The stack's initial value
 

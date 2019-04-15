@@ -14,9 +14,11 @@ public class vroom {
             switch (arg) {
             case "-show-stack": {
                 showStack = true;
+                break;
             }
             case "-show-time": {
                 showTime = true;
+                break;
             }
             default: {
                 inFile = arg;
