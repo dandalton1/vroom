@@ -35,7 +35,7 @@ public class VroomParser {
                 break;
             }
             case "VROOM": {
-                System.out.printf("%c", stackMachine.pop().charValue());
+                System.out.printf("%c", stackMachine.pop());
                 break;
             }
             case "NYEUM": {
@@ -43,7 +43,7 @@ public class VroomParser {
                 break;
             }
             case "CLIK": {
-                stackMachine.push((char) 0);
+                stackMachine.push('\0');
                 break;
             }
             case "BEEP": {
