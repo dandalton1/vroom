@@ -1,19 +1,31 @@
-import java.util.Enumeration;
-import java.util.Stack;
+import java.util.ArrayList;
 
 public class VroomStackMachine {
-    public Stack<Character> stack = new Stack<Character>();
+    public ArrayList<Character> stack = new ArrayList<Character>();
+    public int stackPosition = 0;
 
     public VroomStackMachine() {
-        stack.push((char)0);
+        push((char) 0);
+    }
+
+    public void push(Character c) {
+        stack.add(c);
+        stackPosition++;
+    }
+
+    public Character pop() {
+        return stack.remove(--stackPosition);
     }
 
     public void printStack() {
         System.out.println();
-        Enumeration<Character> elements = stack.elements();
-        System.out.println("STACK: ");
-        while (elements.hasMoreElements()) {
-            System.out.print(((int)elements.nextElement().charValue()) + " | ");
+        System.out.printf("STACK: ");
+        if (!stack.isEmpty()) {
+            for (Character c : stack) {
+                System.out.printf("%d | ", (int) c.charValue());
+            }
+        } else {
+            System.out.printf("EMPTY STACK");
         }
         System.out.println();
     }

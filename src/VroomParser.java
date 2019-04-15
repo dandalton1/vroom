@@ -17,39 +17,39 @@ public class VroomParser {
             String s = VroomFile.next().toUpperCase();
             switch (s) {
                 case "BUM": {
-                    stackMachine.stack.pop();
+                    stackMachine.pop();
                     break;
                 }
                 case "BRUM": {
-                    char c = stackMachine.stack.pop().charValue();
+                    char c = stackMachine.pop().charValue();
                     c++;
-                    stackMachine.stack.push(c);
+                    stackMachine.push(c);
                     break;
                 }
                 case "CLUNK": {
-                    char c = stackMachine.stack.pop().charValue();
+                    char c = stackMachine.pop().charValue();
                     c--;
-                    stackMachine.stack.push(c);
+                    stackMachine.push(c);
                     break;
                 }
                 case "VROOM": {
-                    System.out.printf("%c", stackMachine.stack.pop().charValue());
+                    System.out.printf("%c", stackMachine.pop().charValue());
                     break;
                 }
                 case "NYEUM": {
-                    System.out.printf("%d", (int) stackMachine.stack.pop().charValue());
+                    System.out.printf("%d", (int) stackMachine.pop().charValue());
                     break;
                 }
                 case "CLIK": {
-                    stackMachine.stack.push((char) 0);
+                    stackMachine.push((char) 0);
                     break;
                 }
                 case "BEEP": {
-                    stackMachine.stack.push((char) (stackMachine.stack.pop() + stackMachine.stack.pop()));
+                    stackMachine.push((char) (stackMachine.pop() + stackMachine.pop()));
                     break;
                 }
                 case "ZOOM": {
-                    stackMachine.stack.push((char) (new Scanner(System.in)).nextInt());
+                    stackMachine.push((char) (new Scanner(System.in)).nextInt());
                     break;
                 }
                 case "SKRT": {
