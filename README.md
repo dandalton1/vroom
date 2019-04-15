@@ -10,6 +10,14 @@ The first language that features car noises.
 
 Clearly, vroom is the best language.
 
+# Implementation Time
+
+This is where we record progress of a longer-running vroom program, "Hello, world!"
+
+| Commit ID | Execution Time (ms) |
+| --------- | ------------------- |
+| `4347f21` | 80                  |
+
 # Syntax of vroom
 
 Vroom takes keywords. These keywords work with a stack.
